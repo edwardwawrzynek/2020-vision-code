@@ -314,11 +314,12 @@ public final class Main {
       if(targets.size() >= 1) {
         yaw.setDouble(Math.toDegrees(targets.get(0).yaw));
         targetFound.setBoolean(true);
-        if(targets.get(0).x < 0.07) {
+        if((targets.get(0).y + targets.get(0).h/2) < 0.0) {
           targetAtTopOfImage.setBoolean(true);
         } else {
           targetAtTopOfImage.setBoolean(false);
         }
+        System.out.println("found target(s)");
       } else {
         targetFound.setBoolean(false);
         targetAtTopOfImage.setBoolean(false);
